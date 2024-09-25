@@ -2,6 +2,7 @@ import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import generateResponse from '../generateResponse.mjs';
 
 const Textbox = () => {
   const [query, setQuery] = React.useState('');
@@ -15,18 +16,19 @@ const Textbox = () => {
     }
   }
 
-  const submitQuery = () => {
+  const submitQuery = async () => {
     if (query && query != '') {
       document.getElementById('textbox').value = '';
       document.getElementsByClassName('go')[0].style.color = '#424242';
 
       setQuery('');
-      console.log(query);
+      alert(await generateResponse(query));
     }
   }
 
   const textChange = () => {
-    const queryText = document.getElementById('textbox').value;
+    const textbox = document.getElementById('textbox');
+    const queryText = textbox.value;
     setQuery(queryText);
 
     const goButton = document.getElementsByClassName('go')[0];
@@ -35,18 +37,19 @@ const Textbox = () => {
     } else {
       goButton.style.color = 'var(--primary)';
     }
+
+    textbox.style.height = (query.length > 50) ? `${textbox.scrollHeight}px` : '32px';
   }
 
   return (
     <div className='text-field'>
-      <input
-        type="text"
+      <textarea
         name="query"
         id="textbox"
         placeholder="Message Chatbot"
         onFocus={changeColor}
         onBlur={changeColor}
-        onChange={textChange}
+        onKeyUp={textChange}
       />
       <button className="go" onClick={submitQuery}>
         <FontAwesomeIcon icon={faPaperPlane} />

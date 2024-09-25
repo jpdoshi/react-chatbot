@@ -32,7 +32,7 @@ body {
   max-width: 800px;
   margin-inline: auto;
   overflow-x: hidden;
-  padding-top: 72px;
+  padding-top: 64px;
   padding-bottom: 80px;
   line-height: 1.6;
   letter-spacing: 0.4px;
@@ -40,8 +40,8 @@ body {
 
 nav {
   width: calc(100% - 2rem);
-  height: 64px;
-  line-height: 64px;
+  height: 50px;
+  line-height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,16 +50,14 @@ nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 nav .title {
   font-family: 'Poppins';
-  background: linear-gradient(to right, #ff9966, #ff5e62);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
   font-weight: 900;
-  font-size: 32px;
+  font-size: 28px;
   cursor: default;
 }
 
@@ -69,7 +67,7 @@ nav .title::selection {
 
 .nav-links a {
   font-size: 24px;
-  padding-left: 24px;
+  padding-left: 20px;
   color: var(--text);
   transition: 0.35s ease;
 }
@@ -112,27 +110,20 @@ nav .title::selection {
 
 #textbox {
   background-color: transparent;
-  padding: 8px;
   outline: none;
-  font-size: 17px;
+  font-size: 16px;
   border: none;
   transition: 0.35s ease;
   color: var(--text);
-  margin-right: 12px;
+  margin: 8px;
   flex-grow: 1;
+  font-family: 'NotoSans';
+  height: 32px;
+  line-height: 32px;
+  max-height: 200px;
+  resize: none;
 }
 
 #textbox::placeholder {
   color: #666666;
-}
-
-@media (max-width: 768px) {
-  nav {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-  }
-
-  nav .title {
-    font-size: 28px;
-  }
 }
