@@ -18,7 +18,7 @@
 }
 
 :root {
-  --surface: #000000;
+  --surface: #121212;
   --primary: #ff5e62;
   --text: #F5F5F5;
 }
@@ -32,7 +32,7 @@ body {
   max-width: 800px;
   margin-inline: auto;
   overflow-x: hidden;
-  padding-top: 64px;
+  padding-top: 72px;
   padding-bottom: 80px;
   line-height: 1.6;
   letter-spacing: 0.4px;
@@ -50,7 +50,7 @@ nav {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--surface);
 }
 
 nav .title {
@@ -86,7 +86,7 @@ nav .title::selection {
   bottom: 1rem;
   align-items: center;
   z-index: 1000;
-  background-color: black;
+  background-color: var(--surface);
   border: 3px solid #212121;
   border-radius: 2rem;
   transition: 0.35s ease;
@@ -116,6 +116,7 @@ nav .title::selection {
   transition: 0.35s ease;
   color: var(--text);
   margin: 8px;
+  margin-left: 10px;
   flex-grow: 1;
   font-family: 'NotoSans';
   height: 32px;
@@ -126,4 +127,38 @@ nav .title::selection {
 
 #textbox::placeholder {
   color: #666666;
+}
+
+#chatbox {
+  transform: translateX(12px);
+}
+
+.chat-container {
+  display: flex;
+}
+
+.chat {
+  background-color: #212121;
+  padding: 16px 24px;
+  max-width: 85%;
+  margin-bottom: 18px;
+  border-radius: 24px;
+  border-bottom-left-radius: 0;
+}
+
+.query {
+  background-color: var(--primary);
+  margin-left: auto;
+  border-radius: 24px;
+  border-bottom-right-radius: 0;
+}
+
+@media (max-width: 768px) {
+  #chatbox {
+    transform: none;
+  }
+
+  .chat {
+    max-width: 100%;
+  }
 }

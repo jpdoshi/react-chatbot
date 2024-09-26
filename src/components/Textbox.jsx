@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import generateResponse from '../generateResponse.mjs';
 
-const Textbox = () => {
+const Textbox = ({ addChat }) => {
   const [query, setQuery] = React.useState('');
 
   const changeColor = () => {
@@ -22,7 +22,10 @@ const Textbox = () => {
       document.getElementsByClassName('go')[0].style.color = '#424242';
 
       setQuery('');
-      alert(await generateResponse(query));
+      addChat({ text: query, query: true });
+
+      const response = await generateResponse(query);
+      addChat({ text: response, query: false });
     }
   }
 
