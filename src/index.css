@@ -155,6 +155,19 @@ nav .title::selection {
   border-bottom-right-radius: 0;
 }
 
+ol,
+ul {
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-left: 2rem;
+}
+
+p p {
+  margin-bottom: 1rem;
+}
+
 @keyframes chat-motion {
   from {
     opacity: 0;

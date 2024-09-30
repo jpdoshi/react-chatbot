@@ -3,7 +3,9 @@ import React from 'react'
 const Chat = (props) => {
   return (
     <div className='chat-container'>
-      <p className={(props.query ? 'chat query' : 'chat')}>{props.children}</p>
+      {(props.query)
+        ? <p className='chat query'>{props.children}</p>
+        : <p className='chat' dangerouslySetInnerHTML={{ __html: props.children }} />}
     </div>
   )
 }

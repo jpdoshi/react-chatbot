@@ -20,19 +20,24 @@ const Textbox = ({ addChat }) => {
     if (query && query != '') {
       const textbox = document.getElementById('textbox');
 
+      textbox.style.height = '32px';
+      addChat({ text: textbox.value, query: true });
+      setQuery('');
+
       document.getElementById('textbox').value = '';
       document.getElementsByClassName('go')[0].style.color = '#424242';
 
-      setQuery('');
-      textbox.style.height = '32px';
-      addChat({ text: query, query: true });
-
       const response = await generateResponse(query);
       addChat({ text: response, query: false });
+
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'auto'
+      });
     }
   }
 
-  const textChange = () => {
+  const textChange = (e) => {
     const textbox = document.getElementById('textbox');
     const queryText = textbox.value;
     setQuery(queryText);
@@ -45,6 +50,10 @@ const Textbox = ({ addChat }) => {
     }
 
     textbox.style.height = (query.length > 20) ? `${textbox.scrollHeight}px` : '32px';
+
+    if (e.key == 'Enter' && !e.shiftKey) {
+      submitQuery();
+    }
   }
 
   return (
@@ -55,7 +64,7 @@ const Textbox = ({ addChat }) => {
         placeholder="Message Chatbot"
         onFocus={changeColor}
         onBlur={changeColor}
-        onKeyUp={textChange}
+        onKeyDown={textChange}
       />
       <button className="go" onClick={submitQuery}>
         <FontAwesomeIcon icon={faPaperPlane} />

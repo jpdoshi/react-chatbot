@@ -16,7 +16,7 @@ const App = () => {
       <Navbar />
       <div id="chatbox">
         {chats.map(chat =>
-          <Chat query={chat.query}>{chat.text}</Chat>
+          <Chat key={Math.random()} query={chat.query}>{chat.text}</Chat>
         )}
       </div>
       <Textbox addChat={addChat} />
