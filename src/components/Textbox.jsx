@@ -18,10 +18,13 @@ const Textbox = ({ addChat }) => {
 
   const submitQuery = async () => {
     if (query && query != '') {
+      const textbox = document.getElementById('textbox');
+
       document.getElementById('textbox').value = '';
       document.getElementsByClassName('go')[0].style.color = '#424242';
 
       setQuery('');
+      textbox.style.height = '32px';
       addChat({ text: query, query: true });
 
       const response = await generateResponse(query);
@@ -41,7 +44,7 @@ const Textbox = ({ addChat }) => {
       goButton.style.color = 'var(--primary)';
     }
 
-    textbox.style.height = (query.length > 50) ? `${textbox.scrollHeight}px` : '32px';
+    textbox.style.height = (query.length > 20) ? `${textbox.scrollHeight}px` : '32px';
   }
 
   return (
