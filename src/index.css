@@ -6,32 +6,32 @@
 }
 
 @font-face {
-  font-family: 'NotoSans';
-  src: url('/fonts/NotoSans.ttf');
+  font-family: "NotoSans";
+  src: url("/fonts/NotoSans.ttf");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins.ttf');
+  font-family: "Poppins";
+  src: url("/fonts/Poppins.ttf");
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'JetBrainsMono';
-  src: url('/fonts/JetBrainsMono.ttf');
+  font-family: "JetBrainsMono";
+  src: url("/fonts/JetBrainsMono.ttf");
 }
 
 :root {
-  --surface: #121212;
+  --surface: #f5f5f5;
   --primary: #ff5e62;
-  --text: #F5F5F5;
+  --text: #212121;
 }
 
 body {
   color: var(--text);
   background-color: var(--surface);
-  font-family: 'NotoSans';
+  font-family: "NotoSans";
   padding-inline: 1rem;
   width: 100vw;
   max-width: 800px;
@@ -58,7 +58,7 @@ nav {
 }
 
 nav .title {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: var(--primary);
   font-weight: 900;
   font-size: 28px;
@@ -122,7 +122,7 @@ nav .title::selection {
   margin: 8px;
   margin-left: 10px;
   flex-grow: 1;
-  font-family: 'NotoSans';
+  font-family: "NotoSans";
   height: 32px;
   line-height: 32px;
   max-height: 200px;
@@ -151,6 +151,7 @@ nav .title::selection {
 
 .query {
   max-width: 85%;
+  color: white;
   background-color: var(--primary);
   padding: 12px 20px;
   margin-left: auto;
@@ -189,7 +190,7 @@ code {
 }
 
 code {
-  font-family: 'JetBrainsMono';
+  font-family: "JetBrainsMono";
   letter-spacing: 0;
   opacity: 0.67;
 }
@@ -208,6 +209,13 @@ li {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.theme-switch {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1000;
 }
 
 @media (max-width: 768px) {

@@ -1,36 +1,41 @@
-import React from 'react'
+import React from "react";
 
-import Navbar from './components/Navbar'
-import Textbox from './components/Textbox'
-import Chat from './components/Chat'
+import Navbar from "./components/Navbar";
+import Textbox from "./components/Textbox";
+import Chat from "./components/Chat";
+import ThemeSwitch from "./components/ThemeSwitch";
 
 const App = () => {
   const [chats, setChats] = React.useState([]);
 
   const addChat = (chat) => {
-    setChats(chats => [...chats, chat]);
-  }
+    setChats((chats) => [...chats, chat]);
+  };
 
   return (
     <>
       <Navbar />
       <div id="chatbox">
-        {chats.map(chat =>
-          <Chat key={Math.random()} query={chat.query}>{chat.text}</Chat>
-        )}
+        {chats.map((chat) => (
+          <Chat key={Math.random()} query={chat.query}>
+            {chat.text}
+          </Chat>
+        ))}
       </div>
       <Textbox addChat={addChat} />
-      <div style={{
-        position: 'fixed',
-        bottom: '0',
-        height: '5rem',
-        width: '100%',
-        zIndex: '100',
-        backgroundColor: 'var(--surface)',
-        backdropFilter: 'blur(8px)'
-      }} />
+      <div
+        style={{
+          position: "fixed",
+          bottom: "0",
+          height: "5rem",
+          width: "100%",
+          zIndex: "100",
+          backgroundColor: "var(--surface)",
+        }}
+      />
+      <ThemeSwitch />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
