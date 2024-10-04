@@ -26,7 +26,7 @@ const Navbar = () => {
     <nav>
       <h1 className="title">JD CHATBOT.</h1>
       <div className="nav-links">
-        <a href="#" className="theme-btn" onClick={toggleTheme}>
+        <a className="theme-btn" onClick={toggleTheme}>
           <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
         </a>
         <a href="https://jpdoshi.tech">

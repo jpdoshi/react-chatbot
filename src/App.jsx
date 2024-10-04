@@ -30,6 +30,7 @@ const App = () => {
           width: "100%",
           zIndex: "100",
           backgroundColor: "var(--surface)",
+          transition: "0.35s ease",
         }}
       />
     </>

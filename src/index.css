@@ -40,6 +40,7 @@ body {
   padding-top: 72px;
   padding-bottom: 80px;
   line-height: 1.6;
+  transition: 0.35s ease;
 }
 
 nav {
@@ -55,6 +56,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--surface);
+  transition: 0.35s ease;
 }
 
 nav .title {
@@ -209,10 +211,6 @@ li {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.theme-switch {
-  display: inline-block;
 }
 
 @media (max-width: 768px) {
