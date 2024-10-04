@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Textbox from "./components/Textbox";
 import Chat from "./components/Chat";
-import ThemeSwitch from "./components/ThemeSwitch";
 
 const App = () => {
   const [chats, setChats] = React.useState([]);
@@ -33,7 +32,6 @@ const App = () => {
           backgroundColor: "var(--surface)",
         }}
       />
-      <ThemeSwitch />
     </>
   );
 };
